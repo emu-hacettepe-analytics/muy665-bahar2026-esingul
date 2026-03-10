@@ -1,40 +1,42 @@
 ---
 title: "Hakkımda"
 sidebar: false 
+
+[PDF'i indir](assets/images/TRCV_deneme.pdf)    
 ---
 
 ![](assets/images/vesikalik.jpeg){fig-align="center"}
 
 # Eğitim
 
--   B.S., ................................., ....................................University, Turkey, 20xx - 20xx.
--   M.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
--   Ph.D.., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+-   B.S., Elektronik ve Haberleşme Mühendisliği, Çankaya Üniversitesi, 2010-2015.
+-   M.Sc., Nanoteknoloji ve Nanotıp, Hacettepe Üniversitesi, 2016-2019.
+-   M.Sc., Mühendislik Yönetimi, Hacettepe Üniversitesi, 2025-...
 
 # İş Tecrübesi
 
-## Employements
+1.  ODTÜ MEMS Merkezi, Araştırmacı (2019-2024).
 
-1.  Firm xxx, position xx, year xxx
+2.  Hacettepe Üniversitesi Elektrik Elektronik Mühendisliği, Lisansüstü Proje Asistanı (2018-2019).
 
-2.  Firm yyy, position yyy, year yyy
+# Stajlar
 
-## Internships
+1.  TUSAŞ, 2012.
 
-1.  Firm aaa, position xx, year xxx
+2.  TRT, 2013.
 
-2.  Firm bbb, position yyy, year yyy
+# Yayınlar
 
-# Projects
+1.   E. Gul & D. Gokcen, “Active Memristive Layer Deposition via Mn(II)-Assisted Anodic Oxidation of Titanium”, ECS Journal of Solid State Science and Technology, vol. 9, no. 5, 2020.
 
-1.  TUBİTAK 1001..........................
+    DOI: 10.1149/2162-8777/ ab9519
 
-# Publications
+# Mesleki Beceriler
 
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Ozturk, D. (2022) “UAV Routing for Reconnaissance Mission: A Multi-Objective Orienteering Problem with Time-Dependent Prizes and Multiple Connections”, Computers & Operations Research, 145: 105882.
+-   Temiz Alan Mikrofabrikasyon ve Karakterizasyon
 
-# Competencies
+-   Matlab, Comsol, Origin
 
-R, Quarto, Git, Python
+# Hobiler
 
-# Hobbies
+Yağlıboya, Puzzle, Dans

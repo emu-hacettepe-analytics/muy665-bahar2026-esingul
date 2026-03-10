@@ -1,6 +1,9 @@
 ---
 title: "Hakkımda"
 sidebar: false 
+
+ 
+href: assets/images/TRCV_deneme.pdf   
 ---
 
 ![](assets/images/vesikalik.jpeg){fig-align="center"}

@@ -48,7 +48,6 @@ library(dslabs)
 data(polls_us_election_2016)
 
 
-
 my_first <- "Esin"
 my_birth_year <- 1991
 
@@ -64,7 +63,10 @@ sum(is.na(polls_us_election_2016))
 
 # colSums - AI yardımı aldım.
 
+# Sıralandıktan sonra ilk 8 sütun
+sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)[1:8]
 
+# İlk 8 sütunun sıralanması
 sort(colSums(is.na(polls_us_election_2016[1:8])), decreasing = TRUE)
 
 
@@ -92,7 +94,6 @@ new_election[] <- lapply(new_election, function(x) {
   return(x) 
 
 })
-
 
 
 head(new_election, k)

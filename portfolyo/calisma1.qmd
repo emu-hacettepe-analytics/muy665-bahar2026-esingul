@@ -2,11 +2,13 @@
 title: "Çalışma 1"
 ---
 
-Bu çalışmada iki görevimiz var. İlk olarak, seçtiğim [Veri bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir](https://www.youtube.com/watch?v=1Mvkn71dhaA) videosunda anlatılanlardan kısaca bahsedeceğim.
+Bu çalışmada iki görevimiz var.
 
-Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
+## (a)  
 
-## (a)
+İlk olarak, seçtiğim [Veri bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir](https://www.youtube.com/watch?v=1Mvkn71dhaA) videosunda anlatılanlardan kısaca bahsedeceğim.
+
+## (b)
 
 ```{r}
 
@@ -138,4 +140,4 @@ anyNA(new_election)
 
 ```
 
-## (b)
+## 

@@ -1,12 +1,12 @@
 ---
 title: "Hakkımda"
 sidebar: false 
-resources: muy665-bahar2026-esingul\TRCV_deneme.pdf
+resources: TRCV_deneme.pdf
 ---
 
 ![](assets/images/bob-kevin-stuart-in-minions-3840x2160.jpg){fig-align="center" width="400"}
 
-[CV](muy665-bahar2026-esingul\TRCV_deneme.pdf)
+[CV](TRCV_deneme.pdf)
 
 # Eğitim
 

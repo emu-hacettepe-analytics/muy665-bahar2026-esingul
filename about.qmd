@@ -1,9 +1,12 @@
 ---
 title: "Hakkımda"
 sidebar: false 
+resources: muy665-bahar2026-esingul\assets\images\TRCV_deneme.pdf
 ---
 
 ![](assets/images/bob-kevin-stuart-in-minions-3840x2160.jpg){fig-align="center" width="400"}
+
+[CV](muy665-bahar2026-esingul\assets\images\TRCV_deneme.pdf)
 
 # Eğitim
 
@@ -40,5 +43,3 @@ DOI: 10.1149/2162-8777/ ab9519
 # Hobiler
 
 Yağlıboya, Puzzle, Dans
-
-[muy665-bahar2026-esingul\assets\images\TRCV\_deneme.pdf](muy665-bahar2026-esingul\assets\images\TRCV_deneme.pdf)

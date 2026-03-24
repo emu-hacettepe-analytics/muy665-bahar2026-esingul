@@ -41,4 +41,6 @@ DOI: 10.1149/2162-8777/ ab9519
 
 Yağlıboya, Puzzle, Dans
 
+`<a href="`{=html}[muy665-bahar2026-esingul\assets\images\TRCV\_deneme.pdf](muy665-bahar2026-esingul\assets\images\TRCV_deneme.pdf)`" class="btn btn-primary" role="button">`{=html} <i class="bi bi-download"></i> PDF İndir </a>
+
 href: ([muy665-bahar2026-esingul\assets\images\TRCV\_deneme.pdf](muy665-bahar2026-esingul\assets\images\TRCV_deneme.pdf))

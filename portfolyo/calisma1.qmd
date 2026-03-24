@@ -6,12 +6,6 @@ Bu çalışmada iki görevimiz var. İlk olarak, seçtiğim \[Veri bilimi ve End
 
 href: <https://www.youtube.com/watch?v=1Mvkn71dhaA>
 
-``` R
-{r}
-
-print("hello world")
-```
-
 Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
 
 ## (a)

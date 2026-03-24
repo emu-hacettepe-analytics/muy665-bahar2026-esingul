@@ -3,7 +3,7 @@ title: "Hakkımda"
 sidebar: false 
 ---
 
-![](assets/images/bob-kevin-stuart-in-minions-3840x2160.jpg){fig-align="center"}
+![](assets/images/bob-kevin-stuart-in-minions-3840x2160.jpg){fig-align="center" width="400"}
 
 # Eğitim
 

@@ -11,9 +11,11 @@ Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
 ## (a)
 
 ```{r}
+
 #| label: soru4
 
-install.packages("dslabs")
+install.packages("dslabs", repos = "https://cran.rstudio.com/")
+#install.packages("dslabs")
 library(dslabs)
 data(polls_us_election_2016)
 
@@ -54,7 +56,7 @@ sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)
 
 #numeric ve integer sütunları verileriyle birlikte tablo şeklinde geldi
 
-polls_us_election_2016[sapply(polls_us_election_2016, is.numeric)]
+#polls_us_election_2016[sapply(polls_us_election_2016, is.numeric)]
 
 #new_election <- polls_us_election_2016
 
@@ -115,17 +117,17 @@ new_election[] <- lapply(new_election, function(x) {
 # testleri
 
 
-polls_us_election_2016$samplesize[1802]
-new_election$samplesize[1802] 
+#polls_us_election_2016$samplesize[1802]
+#new_election$samplesize[1802] 
 
-polls_us_election_2016$grade[17]
-new_election$grade[17]
+#polls_us_election_2016$grade[17]
+#new_election$grade[17]
 
-polls_us_election_2016$grade
-new_election$grade
+#polls_us_election_2016$grade
+#new_election$grade
 
-polls_us_election_2016$rawpoll_mcmullin
-new_election$rawpoll_mcmullin
+#polls_us_election_2016$rawpoll_mcmullin
+#new_election$rawpoll_mcmullin
 
 # na larin indexleri
 #which(is.na(polls_us_election_2016$grade))

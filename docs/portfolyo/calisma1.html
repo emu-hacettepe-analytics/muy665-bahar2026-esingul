@@ -417,9 +417,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a" class="level2">
 <h2 class="anchored" data-anchor-id="a">(a)</h2>
 <p>İlk olarak, seçtiğim <a href="https://www.youtube.com/watch?v=1Mvkn71dhaA">Veri bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan &amp; Erdi Daşdemir</a> videosunda anlatılanlardan kısaca bahsedeceğim.</p>
+<p>Karar verme ve sorunların çözümü sürecinde, tahmin ve matematiksel modellerde kullanılacak verinin çıkartılıp işlenmesi önemlidir. İşlenmiş verilerden belirlenen öznitelikler öğrenici algoritmaya verilerek tahmin gerçekleştirilebilir. Karar verme süreçlerinde geleneksel öğrenme ve derin öğrenme yöntemleri izlenebilir. Geleneksel öğrenme, problemin anlaşılıp analiz edilmesi (öznitelik çıkarımı) ve veriye dönüştürüldükten sonra bir modele verilmesi şeklinde ilerlerken, derin öğrenmede ham veriden öznitelik çıkarımı ve öğrenme birlikte yapılmaktadır. Yapısal olmayan verilerle çalışırken kullanışlı olsa da fazla parametre olması nedeniyle açıklanabilirliğinin düşük olması, kirli ve eksik veriden meydana gelen tahmin hatalarının sonuca etkisinin geleneksel yönteme göre daha yüksek olması (yönlendirme ve gürbüzlüğün düşük olması) ve fazla veri gereksinimi nedeniyle bazen geleneksel öğrenmeden geride kalabilir.</p>
+<p>Buna göre aşağıdaki durumlardan hangisinde karar verme süreci için derin öğrenme kullanımı daha avantajlıdır?</p>
+<p>A) Tahmin sonuçlarının yorumlanması ve açıklanması gerektiğinde</p>
+<p>B) Eldeki veri metin halinde olduğunda</p>
+<p>C) Tahmin yöntemleriyle elde edilmiş veriler kullanılacağında</p>
+<p>D) Eldeki veri az olduğunda</p>
+<p>Doğru Cevap B’dir.</p>
+<p>Birçok sektörde üretim-tüketim dengesinin sağlanabilmesi ve dolayısıyla maddi, çevresel vb. zararın en aza indirilebilmesi için tahmin doğruluğu büyük önem taşır. Bu nedenle toplanacak veriler, toplama yaklaşımları, kullanılacak optimizasyon ve tahmin modelleri ve yöntemleri de doğru seçilmelidir. Bu açıdan nokta tahmin yerine aralık tahmini yapmak daha güvenlidir.</p>
+<p>Çevrimiçi perakendede ciro eniyileme amacıyla kullanılabilecek pekiştirmeli öğrenme (reinforcement learning) yaklaşımları hangileridir?</p>
+<ul>
+<li><p>Akıllı deneme yanılma -&gt; Farklı algoritmaların belirli sürelerde denenerek en iyisinin bulunması</p></li>
+<li><p>Minimum pişmanlık, maksimum ödül -&gt; İyi ödül almak için önceden öğrenilen bilgilerin kullanılması, keşfetmek ve büyük ödülleri almak içinse yeni şeylerin denenmesi</p></li>
+<li><p>Basit sıralama politikası -&gt; Önerilen sıralama skorunu, taraflı veriyi engellemek için belirlenmiş bir katsayı ile çarparak dinamik skor elde edilmesi</p></li>
+</ul>
+<p>Makine öğrenmesinin optimizasyonu iyileştirmek için kullanılması, örneğin her gün kullanılan bir optimizasyon modelinin çözüm verilerini kullanarak yeni gün için çözüm elde edilmesi gibi konular da günümüzde sıkça çalışılmaktadır.</p>
 </section>
 <section id="b" class="level2">
 <h2 class="anchored" data-anchor-id="b">(b)</h2>
+<p>İkinci kısımda ise, dslabs paketinden polls_us_election_2016 veri setini kullanarak verilen görevleri tamamlayacağım.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: soru4</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>

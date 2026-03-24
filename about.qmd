@@ -41,4 +41,4 @@ DOI: 10.1149/2162-8777/ ab9519
 
 Yağlıboya, Puzzle, Dans
 
-\[CV\](\assets\images\TRCV)
+href: (muy665-bahar2026-esingul\assets\images\TRCV\_deneme.pdf)

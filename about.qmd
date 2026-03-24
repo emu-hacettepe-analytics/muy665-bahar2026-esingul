@@ -3,7 +3,7 @@ title: "Hakkımda"
 sidebar: false 
 ---
 
-![](assets/images/vesikalik.jpeg){fig-align="center"}
+![](assets/images/bob-kevin-stuart-in-minions-3840x2160.jpg){fig-align="center"}
 
 # Eğitim
 
@@ -25,9 +25,11 @@ sidebar: false
 
 # Yayınlar
 
-1.   E. Gul & D. Gokcen, “Active Memristive Layer Deposition via Mn(II)-Assisted Anodic Oxidation of Titanium”, ECS Journal of Solid State Science and Technology, vol. 9, no. 5, 2020.
+1.  E. Gul & D. Gokcen, “Active Memristive Layer Deposition via Mn(II)-Assisted Anodic Oxidation of Titanium”, ECS Journal of Solid State Science and Technology, vol. 9, no. 5, 2020.
 
-    DOI: 10.1149/2162-8777/ ab9519
+```         
+DOI: 10.1149/2162-8777/ ab9519
+```
 
 # Mesleki Beceriler
 

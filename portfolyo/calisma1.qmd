@@ -6,7 +6,7 @@ Bu çalışmada iki görevimiz var. İlk olarak, seçtiğim \[Veri bilimi ve End
 
 href: <https://www.youtube.com/watch?v=1Mvkn71dhaA>
 
-```{}
+```         
 ```
 
 Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
@@ -14,14 +14,14 @@ Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
 ## (a)
 
 ```{r}
-#| echo: true
+#| label: soru4
 
 install.packages("dslabs")
 library(dslabs)
 data(polls_us_election_2016)
 
-length(polls_us_election_2016$state)
-length(polls_us_election_2016$population)
+#length(polls_us_election_2016$state)
+#length(polls_us_election_2016$population)
 
 my_first <- "Esin"
 my_birth_year <- 1991
@@ -32,9 +32,9 @@ head(polls_us_election_2016, k)
 
 sum(is.na(polls_us_election_2016))
 
-sum(is.na(polls_us_election_2016[1:8]))
+#sum(is.na(polls_us_election_2016[1:8]))
 
-names(polls_us_election_2016[1:8])
+#names(polls_us_election_2016[1:8])
 #is.na(polls_us_election_2016[1:8])
 
 # colSums - AI, baska yolu var mi?
@@ -45,12 +45,12 @@ sort(colSums(is.na(polls_us_election_2016[1:8])), decreasing = TRUE)
 sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)
 
 
-class(polls_us_election_2016$rawpoll_mcmullin)
-class(polls_us_election_2016$adjpoll_mcmullin)
-class(polls_us_election_2016$rawpoll_johnson)
-class(polls_us_election_2016$adjpoll_johnson)
-class(polls_us_election_2016$grade)
-class(polls_us_election_2016$samplesize)
+#class(polls_us_election_2016$rawpoll_mcmullin)
+#class(polls_us_election_2016$adjpoll_mcmullin)
+#class(polls_us_election_2016$rawpoll_johnson)
+#class(polls_us_election_2016$adjpoll_johnson)
+#class(polls_us_election_2016$grade)
+#class(polls_us_election_2016$samplesize)
 
 
 #numeric ve integer olan sütunlar, sapply(polls_us_election_2016, class) yazınca her sütunun class ı  

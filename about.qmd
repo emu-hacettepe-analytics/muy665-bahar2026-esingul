@@ -1,7 +1,7 @@
 ---
 title: "Hakkımda"
 sidebar: false 
-resources: TRCV_deneme.pdf
+
 ---
 
 ![](assets/images/bob-kevin-stuart-in-minions-3840x2160.jpg){fig-align="center" width="400"}

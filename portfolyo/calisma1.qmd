@@ -41,7 +41,7 @@ sum(is.na(polls_us_election_2016))
 
 sort(colSums(is.na(polls_us_election_2016[1:8])), decreasing = TRUE)
 
-sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)
+#sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)
 
 
 #class(polls_us_election_2016$rawpoll_mcmullin)
@@ -110,8 +110,7 @@ new_election[] <- lapply(new_election, function(x) {
     
   }
   return(x) 
-  
- #  yeni level eklediğimizde neden return gerekli? 
+
 })
 
 # testleri

@@ -1,7 +1,6 @@
 ---
 title: "Hakkımda"
 sidebar: false 
-
 ---
 
 ![](assets/images/bob-kevin-stuart-in-minions-3840x2160.jpg){fig-align="center" width="400"}
@@ -31,7 +30,7 @@ sidebar: false
 1.  E. Gul & D. Gokcen, “Active Memristive Layer Deposition via Mn(II)-Assisted Anodic Oxidation of Titanium”, ECS Journal of Solid State Science and Technology, vol. 9, no. 5, 2020.
 
 ```         
-DOI: 10.1149/2162-8777/ ab9519
+DOI: 10.1149/2162-8777/ab9519
 ```
 
 # Mesleki Beceriler

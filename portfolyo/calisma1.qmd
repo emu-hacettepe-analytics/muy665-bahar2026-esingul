@@ -47,75 +47,28 @@ Makine öğrenmesinin optimizasyonu iyileştirmek için kullanılması, örneği
 library(dslabs)
 data(polls_us_election_2016)
 
-#length(polls_us_election_2016$state)
-#length(polls_us_election_2016$population)
+
 
 my_first <- "Esin"
 my_birth_year <- 1991
 
 k <- (nchar(my_first) + my_birth_year) %% 15 + 8
 
+# k=8
+
 head(polls_us_election_2016, k)
+
 
 sum(is.na(polls_us_election_2016))
 
-#sum(is.na(polls_us_election_2016[1:8]))
 
-#names(polls_us_election_2016[1:8])
-#is.na(polls_us_election_2016[1:8])
+# colSums - AI yardımı aldım.
 
-# colSums - AI, baska yolu var mi?
-#colSums(is.na(polls_us_election_2016[1:8]))
 
 sort(colSums(is.na(polls_us_election_2016[1:8])), decreasing = TRUE)
 
-#sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)
 
-
-#class(polls_us_election_2016$rawpoll_mcmullin)
-#class(polls_us_election_2016$adjpoll_mcmullin)
-#class(polls_us_election_2016$rawpoll_johnson)
-#class(polls_us_election_2016$adjpoll_johnson)
-#class(polls_us_election_2016$grade)
-#class(polls_us_election_2016$samplesize)
-
-
-#numeric ve integer olan sütunlar, sapply(polls_us_election_2016, class) yazınca her sütunun class ı  
-
-#numeric ve integer sütunları verileriyle birlikte tablo şeklinde geldi
-
-#polls_us_election_2016[sapply(polls_us_election_2016, is.numeric)]
-
-#new_election <- polls_us_election_2016
-
-#new_election[] <- lapply(new_election, function(x) {
-  
-#  if (is.numeric(x)) {
-    
-#    ifelse(is.na(x), my_birth_year + k, x)
-    
-#  } else if (is.character(x)){
-  
-#    ifelse(is.na(x), paste0(my_first, "_", k), x)
-    
-#  } else if (is.factor(x)){ 
-  
-# karaktere çevirerek yapmak      
-#    x <- as.character(x)
-#    ifelse(is.na(x), paste0(my_first, "_", k), x)
-    
-# factor olarak yapmak, factor sütunlarda ifelse hata verirmiş o yüzden önce karaktere çevriliyor, ama bunu yapınca 11175 NA çıktı? diğer ifelse leri de aşağıdaki gibi değiştirince düzeldi, ama anlamı nedir?
-   
-#   new_val <- paste0(my_first, "_", k)
-#   levels(x) <- c(levels(x), new_val)
-#   x[is.na(x)] <- new_val
-    
-#  }
-#  return(x) 
-  
- #  yeni level eklediğimizde neden gerekli? 
-#})
-
+# lapply ile fonksiyon yazımı, neden ifelse kullanamayacağım ve faktör olması durumunda yeni level ekleme konularında AI yardımı aldım.
 
 
 new_election <- polls_us_election_2016
@@ -132,33 +85,15 @@ new_election[] <- lapply(new_election, function(x) {
     
   } else if (is.factor(x)){ 
   
-   new_val <- paste0(my_first, "_", k)
-   levels(x) <- c(levels(x), new_val)
-   x[is.na(x)] <- new_val
+   levels(x) <- c(levels(x), paste0(my_first, "_", k))
+   x[is.na(x)] <- paste0(my_first, "_", k)
     
   }
   return(x) 
 
 })
 
-# testleri
 
-
-#polls_us_election_2016$samplesize[1802]
-#new_election$samplesize[1802] 
-
-#polls_us_election_2016$grade[17]
-#new_election$grade[17]
-
-#polls_us_election_2016$grade
-#new_election$grade
-
-#polls_us_election_2016$rawpoll_mcmullin
-#new_election$rawpoll_mcmullin
-
-# na larin indexleri
-#which(is.na(polls_us_election_2016$grade))
-#which(is.na(polls_us_election_2016$samplesize))
 
 head(new_election, k)
 

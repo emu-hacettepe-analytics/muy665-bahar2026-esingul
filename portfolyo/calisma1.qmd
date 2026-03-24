@@ -8,7 +8,35 @@ Bu çalışmada iki görevimiz var.
 
 İlk olarak, seçtiğim [Veri bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir](https://www.youtube.com/watch?v=1Mvkn71dhaA) videosunda anlatılanlardan kısaca bahsedeceğim.
 
+Karar verme ve sorunların çözümü sürecinde, tahmin ve matematiksel modellerde kullanılacak verinin çıkartılıp işlenmesi önemlidir. İşlenmiş verilerden belirlenen öznitelikler öğrenici algoritmaya verilerek tahmin gerçekleştirilebilir. Karar verme süreçlerinde geleneksel öğrenme ve derin öğrenme yöntemleri izlenebilir. Geleneksel öğrenme, problemin anlaşılıp analiz edilmesi (öznitelik çıkarımı) ve veriye dönüştürüldükten sonra bir modele verilmesi şeklinde ilerlerken, derin öğrenmede ham veriden öznitelik çıkarımı ve öğrenme birlikte yapılmaktadır. Yapısal olmayan verilerle çalışırken kullanışlı olsa da fazla parametre olması nedeniyle açıklanabilirliğinin düşük olması, kirli ve eksik veriden meydana gelen tahmin hatalarının sonuca etkisinin geleneksel yönteme göre daha yüksek olması (yönlendirme ve gürbüzlüğün düşük olması) ve fazla veri gereksinimi nedeniyle bazen geleneksel öğrenmeden geride kalabilir.
+
+Buna göre aşağıdaki durumlardan hangisinde karar verme süreci için derin öğrenme kullanımı daha avantajlıdır?
+
+A\) Tahmin sonuçlarının yorumlanması ve açıklanması gerektiğinde
+
+B\) Eldeki veri metin halinde olduğunda
+
+C\) Tahmin yöntemleriyle elde edilmiş veriler kullanılacağında
+
+D\) Eldeki veri az olduğunda
+
+Doğru Cevap B'dir.
+
+Birçok sektörde üretim-tüketim dengesinin sağlanabilmesi ve dolayısıyla maddi, çevresel vb. zararın en aza indirilebilmesi için tahmin doğruluğu büyük önem taşır. Bu nedenle toplanacak veriler, toplama yaklaşımları, kullanılacak optimizasyon ve tahmin modelleri ve yöntemleri de doğru seçilmelidir. Bu açıdan nokta tahmin yerine aralık tahmini yapmak daha güvenlidir.
+
+Çevrimiçi perakendede ciro eniyileme amacıyla kullanılabilecek pekiştirmeli öğrenme (reinforcement learning) yaklaşımları hangileridir?
+
+-   Akıllı deneme yanılma -\> Farklı algoritmaların belirli sürelerde denenerek en iyisinin bulunması
+
+-   Minimum pişmanlık, maksimum ödül -\> İyi ödül almak için önceden öğrenilen bilgilerin kullanılması, keşfetmek ve büyük ödülleri almak içinse yeni şeylerin denenmesi
+
+-   Basit sıralama politikası -\> Önerilen sıralama skorunu, taraflı veriyi engellemek için belirlenmiş bir katsayı ile çarparak dinamik skor elde edilmesi
+
+Makine öğrenmesinin optimizasyonu iyileştirmek için kullanılması, örneğin her gün kullanılan bir optimizasyon modelinin çözüm verilerini kullanarak yeni gün için çözüm elde edilmesi gibi konular da günümüzde sıkça çalışılmaktadır.
+
 ## (b)
+
+İkinci kısımda ise, dslabs paketinden polls_us_election_2016 veri setini kullanarak verilen görevleri tamamlayacağım.
 
 ```{r}
 

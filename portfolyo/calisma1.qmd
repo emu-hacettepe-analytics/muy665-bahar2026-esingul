@@ -10,27 +10,27 @@ Bu çalışmada iki görevimiz var.
 
 Karar verme ve sorunların çözümü sürecinde, tahmin ve matematiksel modellerde kullanılacak verinin çıkartılıp işlenmesi önemlidir. İşlenmiş verilerden belirlenen öznitelikler öğrenici algoritmaya verilerek tahmin gerçekleştirilebilir. Karar verme süreçlerinde geleneksel öğrenme ve derin öğrenme yöntemleri izlenebilir. Geleneksel öğrenme, problemin anlaşılıp analiz edilmesi (öznitelik çıkarımı) ve veriye dönüştürüldükten sonra bir modele verilmesi şeklinde ilerlerken, derin öğrenmede ham veriden öznitelik çıkarımı ve öğrenme birlikte yapılmaktadır. Yapısal olmayan verilerle çalışırken kullanışlı olsa da fazla parametre olması nedeniyle açıklanabilirliğinin düşük olması, kirli ve eksik veriden meydana gelen tahmin hatalarının sonuca etkisinin geleneksel yönteme göre daha yüksek olması (yönlendirme ve gürbüzlüğün düşük olması) ve fazla veri gereksinimi nedeniyle bazen geleneksel öğrenmeden geride kalabilir.
 
-Buna göre aşağıdaki durumlardan hangisinde karar verme süreci için derin öğrenme kullanımı daha avantajlıdır?
+*Buna göre aşağıdaki durumlardan hangisinde karar verme süreci için derin öğrenme kullanımı daha avantajlıdır?*
 
-A\) Tahmin sonuçlarının yorumlanması ve açıklanması gerektiğinde
+*A) Tahmin sonuçlarının yorumlanması ve açıklanması gerektiğinde*
 
-B\) Eldeki veri metin halinde olduğunda
+*B) Eldeki veri metin halinde olduğunda*
 
-C\) Tahmin yöntemleriyle elde edilmiş veriler kullanılacağında
+*C) Tahmin yöntemleriyle elde edilmiş veriler kullanılacağında*
 
-D\) Eldeki veri az olduğunda
+*D) Eldeki veri az olduğunda*
 
-Doğru Cevap B'dir.
+*Doğru Cevap B'dir.*
 
 Birçok sektörde üretim-tüketim dengesinin sağlanabilmesi ve dolayısıyla maddi, çevresel vb. zararın en aza indirilebilmesi için tahmin doğruluğu büyük önem taşır. Bu nedenle toplanacak veriler, toplama yaklaşımları, kullanılacak optimizasyon ve tahmin modelleri ve yöntemleri de doğru seçilmelidir. Bu açıdan nokta tahmin yerine aralık tahmini yapmak daha güvenlidir.
 
-Çevrimiçi perakendede ciro eniyileme amacıyla kullanılabilecek pekiştirmeli öğrenme (reinforcement learning) yaklaşımları hangileridir?
+*Çevrimiçi perakendede ciro eniyileme amacıyla kullanılabilecek pekiştirmeli öğrenme (reinforcement learning) yaklaşımları hangileridir?*
 
--   Akıllı deneme yanılma -\> Farklı algoritmaların belirli sürelerde denenerek en iyisinin bulunması
+-   *Akıllı deneme yanılma -\> Farklı algoritmaların belirli sürelerde denenerek en iyisinin bulunması*
 
--   Minimum pişmanlık, maksimum ödül -\> İyi ödül almak için önceden öğrenilen bilgilerin kullanılması, keşfetmek ve büyük ödülleri almak içinse yeni şeylerin denenmesi
+-   *Minimum pişmanlık, maksimum ödül -\> İyi ödül almak için önceden öğrenilen bilgilerin kullanılması, keşfetmek ve büyük ödülleri almak içinse yeni şeylerin denenmesi*
 
--   Basit sıralama politikası -\> Önerilen sıralama skorunu, taraflı veriyi engellemek için belirlenmiş bir katsayı ile çarparak dinamik skor elde edilmesi
+-   *Basit sıralama politikası -\> Önerilen sıralama skorunu, taraflı veriyi engellemek için belirlenmiş bir katsayı ile çarparak dinamik skor elde edilmesi*
 
 Makine öğrenmesinin optimizasyonu iyileştirmek için kullanılması, örneğin her gün kullanılan bir optimizasyon modelinin çözüm verilerini kullanarak yeni gün için çözüm elde edilmesi gibi konular da günümüzde sıkça çalışılmaktadır.
 
@@ -53,25 +53,24 @@ my_birth_year <- 1991
 
 k <- (nchar(my_first) + my_birth_year) %% 15 + 8
 
-# k=8
-
+# k=8, veri setinin ilk k adet satırı
 head(polls_us_election_2016, k)
 
 
+# Veri setindeki toplam NA sayısı
 sum(is.na(polls_us_election_2016))
 
 
 # colSums - AI yardımı aldım.
-
-# Sıralandıktan sonra ilk 8 sütun
+# NA sayısı sıralandıktan sonra ilk 8 sütun
 sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)[1:8]
 
-# İlk 8 sütunun sıralanması
+# İlk 8 sütunun NA sayısına göre sıralanması
 sort(colSums(is.na(polls_us_election_2016[1:8])), decreasing = TRUE)
 
 
 # lapply ile fonksiyon yazımı, neden ifelse kullanamayacağım ve faktör olması durumunda yeni level ekleme konularında AI yardımı aldım.
-
+# NA değerlerinin değiştirilmesi
 
 new_election <- polls_us_election_2016
 
@@ -95,9 +94,10 @@ new_election[] <- lapply(new_election, function(x) {
 
 })
 
-
+# Yeni veri çerçevesinin ilk k adet satırı
 head(new_election, k)
 
+# Yeni veri çerçevesindeki NA sayısı
 sum(is.na(new_election))
 
 anyNA(new_election)

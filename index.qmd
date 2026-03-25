@@ -3,6 +3,6 @@ title: "Analitik sayfama hoş geldiniz"
 sidebar: false 
 ---
 
-MUY660-İş Analitiği dersi sayfama hoş geldiniz.
+MUY665-İş Analitiği dersi sayfama hoş geldiniz.
 
 Burada analitik çalışmalarımı paylaşıyorum.

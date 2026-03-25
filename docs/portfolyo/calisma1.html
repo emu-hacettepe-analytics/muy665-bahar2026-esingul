@@ -418,18 +418,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="a">(a)</h2>
 <p>İlk olarak, seçtiğim <a href="https://www.youtube.com/watch?v=1Mvkn71dhaA">Veri bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan &amp; Erdi Daşdemir</a> videosunda anlatılanlardan kısaca bahsedeceğim.</p>
 <p>Karar verme ve sorunların çözümü sürecinde, tahmin ve matematiksel modellerde kullanılacak verinin çıkartılıp işlenmesi önemlidir. İşlenmiş verilerden belirlenen öznitelikler öğrenici algoritmaya verilerek tahmin gerçekleştirilebilir. Karar verme süreçlerinde geleneksel öğrenme ve derin öğrenme yöntemleri izlenebilir. Geleneksel öğrenme, problemin anlaşılıp analiz edilmesi (öznitelik çıkarımı) ve veriye dönüştürüldükten sonra bir modele verilmesi şeklinde ilerlerken, derin öğrenmede ham veriden öznitelik çıkarımı ve öğrenme birlikte yapılmaktadır. Yapısal olmayan verilerle çalışırken kullanışlı olsa da fazla parametre olması nedeniyle açıklanabilirliğinin düşük olması, kirli ve eksik veriden meydana gelen tahmin hatalarının sonuca etkisinin geleneksel yönteme göre daha yüksek olması (yönlendirme ve gürbüzlüğün düşük olması) ve fazla veri gereksinimi nedeniyle bazen geleneksel öğrenmeden geride kalabilir.</p>
-<p>Buna göre aşağıdaki durumlardan hangisinde karar verme süreci için derin öğrenme kullanımı daha avantajlıdır?</p>
-<p>A) Tahmin sonuçlarının yorumlanması ve açıklanması gerektiğinde</p>
-<p>B) Eldeki veri metin halinde olduğunda</p>
-<p>C) Tahmin yöntemleriyle elde edilmiş veriler kullanılacağında</p>
-<p>D) Eldeki veri az olduğunda</p>
-<p>Doğru Cevap B’dir.</p>
+<p><em>Buna göre aşağıdaki durumlardan hangisinde karar verme süreci için derin öğrenme kullanımı daha avantajlıdır?</em></p>
+<p><em>A) Tahmin sonuçlarının yorumlanması ve açıklanması gerektiğinde</em></p>
+<p><em>B) Eldeki veri metin halinde olduğunda</em></p>
+<p><em>C) Tahmin yöntemleriyle elde edilmiş veriler kullanılacağında</em></p>
+<p><em>D) Eldeki veri az olduğunda</em></p>
+<p><em>Doğru Cevap B’dir.</em></p>
 <p>Birçok sektörde üretim-tüketim dengesinin sağlanabilmesi ve dolayısıyla maddi, çevresel vb. zararın en aza indirilebilmesi için tahmin doğruluğu büyük önem taşır. Bu nedenle toplanacak veriler, toplama yaklaşımları, kullanılacak optimizasyon ve tahmin modelleri ve yöntemleri de doğru seçilmelidir. Bu açıdan nokta tahmin yerine aralık tahmini yapmak daha güvenlidir.</p>
-<p>Çevrimiçi perakendede ciro eniyileme amacıyla kullanılabilecek pekiştirmeli öğrenme (reinforcement learning) yaklaşımları hangileridir?</p>
+<p><em>Çevrimiçi perakendede ciro eniyileme amacıyla kullanılabilecek pekiştirmeli öğrenme (reinforcement learning) yaklaşımları hangileridir?</em></p>
 <ul>
-<li><p>Akıllı deneme yanılma -&gt; Farklı algoritmaların belirli sürelerde denenerek en iyisinin bulunması</p></li>
-<li><p>Minimum pişmanlık, maksimum ödül -&gt; İyi ödül almak için önceden öğrenilen bilgilerin kullanılması, keşfetmek ve büyük ödülleri almak içinse yeni şeylerin denenmesi</p></li>
-<li><p>Basit sıralama politikası -&gt; Önerilen sıralama skorunu, taraflı veriyi engellemek için belirlenmiş bir katsayı ile çarparak dinamik skor elde edilmesi</p></li>
+<li><p><em>Akıllı deneme yanılma -&gt; Farklı algoritmaların belirli sürelerde denenerek en iyisinin bulunması</em></p></li>
+<li><p><em>Minimum pişmanlık, maksimum ödül -&gt; İyi ödül almak için önceden öğrenilen bilgilerin kullanılması, keşfetmek ve büyük ödülleri almak içinse yeni şeylerin denenmesi</em></p></li>
+<li><p><em>Basit sıralama politikası -&gt; Önerilen sıralama skorunu, taraflı veriyi engellemek için belirlenmiş bir katsayı ile çarparak dinamik skor elde edilmesi</em></p></li>
 </ul>
 <p>Makine öğrenmesinin optimizasyonu iyileştirmek için kullanılması, örneğin her gün kullanılan bir optimizasyon modelinin çözüm verilerini kullanarak yeni gün için çözüm elde edilmesi gibi konular da günümüzde sıkça çalışılmaktadır.</p>
 </section>
@@ -453,9 +453,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> (<span class="fu">nchar</span>(my_first) <span class="sc">+</span> my_birth_year) <span class="sc">%%</span> <span class="dv">15</span> <span class="sc">+</span> <span class="dv">8</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># k=8</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(polls_us_election_2016, k)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># k=8, veri setinin ilk k adet satırı</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(polls_us_election_2016, k)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  state  startdate    enddate
 1  U.S. 2016-11-03 2016-11-06
@@ -494,21 +493,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 7        45.11649      40.92722        4.341786               NA
 8        43.58576      40.77325        5.365788               NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(polls_us_election_2016))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Veri setindeki toplam NA sayısı</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(polls_us_election_2016))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11604</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># colSums - AI yardımı aldım.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sıralandıktan sonra ilk 8 sütun</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(polls_us_election_2016)), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NA sayısı sıralandıktan sonra ilk 8 sütun</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(polls_us_election_2016)), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>rawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson 
             4178             4178             1409             1409 
            grade       samplesize            state        startdate 
              429                1                0                0 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlk 8 sütunun sıralanması</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># İlk 8 sütunun NA sayısına göre sıralanması</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(polls_us_election_2016[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>])), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          grade      samplesize           state       startdate         enddate 
@@ -517,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
               0               0               0 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lapply ile fonksiyon yazımı, neden ifelse kullanamayacağım ve faktör olması durumunda yeni level ekleme konularında AI yardımı aldım.</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># NA değerlerinin değiştirilmesi</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>new_election <span class="ot">&lt;-</span> polls_us_election_2016</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -541,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Yeni veri çerçevesinin ilk k adet satırı</span></span>
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(new_election, k)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  state  startdate    enddate
@@ -581,7 +580,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 7        45.11649      40.92722        4.341786             1999
 8        43.58576      40.77325        5.365788             1999</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(new_election))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Yeni veri çerçevesindeki NA sayısı</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(new_election))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>

@@ -55,8 +55,8 @@ sum(duplicated(operabale))
 #yıllara göre seyirci sayısı değişimi
 ob1 <- operabale |> ggplot(aes(x = sezon_yili, y = toplam_seyirci_sayisi/1000))
 
-ob1 + geom_line(color = "black") + 
-     geom_point(color = "maroon") +
+ob1 + geom_line(color = "maroon") + 
+     geom_point(color = "black") +
      xlab("Sezon Yılı") + 
      ylab("Seyirci Sayısı (Bin)") + 
      scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
@@ -68,8 +68,8 @@ ob1 + geom_line(color = "black") +
 #yıllara göre oynanan eser sayısı değişimi
 ob2 <- operabale |> ggplot(aes(x = sezon_yili, y = toplam_oynanan_eser_sayisi))
 
-ob2 + geom_line(color = "black") + 
-     geom_point(color = "orange") +
+ob2 + geom_line(color = "orange") + 
+     geom_point(color = "black") +
      xlab("Sezon Yılı") + 
      ylab("Oynanan Eser Sayısı") + 
      scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
@@ -81,8 +81,8 @@ ob2 + geom_line(color = "black") +
 #yıllara göre koltuk sayısı değişimi
 ob3 <- operabale |> ggplot(aes(x = sezon_yili, y = koltuk_sayisi))
 
-ob3 + geom_line(color = "black") + 
-     geom_point(color = "cyan") +
+ob3 + geom_line(color = "cyan") + 
+     geom_point(color = "black") +
      xlab("Sezon Yılı") + 
      ylab("Koltuk Sayısı") + 
      scale_y_continuous(labels = comma) + 
@@ -133,8 +133,8 @@ dolulukorani
 
 ob4 <- operabale |> ggplot(aes(x = sezon_yili, y = dolulukorani))
 
-ob4 + geom_line(color = "black") + 
-     geom_point(color = "maroon") +
+ob4 + geom_line(color = "maroon") + 
+     geom_point(color = "black") +
      xlab("Sezon Yılı") + 
      ylab("Doluluk Oranı") + 
      scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
@@ -166,8 +166,8 @@ normalize_operabale <- operabale |>
 
 
 ggplot(normalize_operabale, aes(x = sezon_yili, y = Deger, color = Metrik, group = Metrik)) +
-  geom_line(linewidth = 1) +
-  geom_point(size = 2) +
+  geom_line() +
+  geom_point(size = 1) +
   scale_y_continuous(labels = scales::percent, limits = c(0, 1)) +
   scale_x_continuous(breaks = seq(2000, 2024, by = 1)) +
   labs(

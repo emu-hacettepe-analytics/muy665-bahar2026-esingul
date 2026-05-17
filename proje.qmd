@@ -1,6 +1,6 @@
 ---
 title: "Proje X (proje adını yazınız)"
-number-sections: true
+#number-sections: true
 ---
 
 **Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.**

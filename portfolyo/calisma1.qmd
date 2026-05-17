@@ -4,7 +4,7 @@ title: "Çalışma 1"
 
 Bu çalışmada iki görevimiz var.
 
-## (a)  
+## (a)
 
 İlk olarak, seçtiğim [Veri bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir](https://www.youtube.com/watch?v=1Mvkn71dhaA) videosunda anlatılanlardan kısaca bahsedeceğim.
 
@@ -46,7 +46,6 @@ Makine öğrenmesinin optimizasyonu iyileştirmek için kullanılması, örneği
 #install.packages("dslabs")
 library(dslabs)
 data(polls_us_election_2016)
-
 
 my_first <- "Esin"
 my_birth_year <- 1991

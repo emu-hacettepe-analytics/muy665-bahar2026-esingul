@@ -23,6 +23,171 @@ xxxxxx
 
 xxxxxx
 
+```{r}
+
+#install.packages("tidyverse", repos = "https://cran.rstudio.com/")
+#install.packages("ggthemes", repos =  "https://cran.rstudio.com/")
+#install.packages("patchwork", repos =  "https://cran.rstudio.com/")
+library(tidyverse)
+library(ggplot2)
+library(readxl)
+#library(knitr)
+library(dplyr)
+library(scales)
+library(ggthemes)
+library(tidyr)
+#library(patchwork)
+
+operabale <- read_xlsx("operabale.xlsx")
+str(operabale)
+
+#view(operabale)
+#kable(operabale)
+#glimpse(operabale)
+#summary(operabale)
+
+anyNA(operabale)
+
+sapply(operabale, class)
+
+sum(duplicated(operabale))
+
+#yıllara göre seyirci sayısı değişimi
+ob1 <- operabale |> ggplot(aes(x = sezon_yili, y = toplam_seyirci_sayisi/1000))
+
+ob1 + geom_line(color = "black") + 
+     geom_point(color = "maroon") +
+     xlab("Sezon Yılı") + 
+     ylab("Seyirci Sayısı (Bin)") + 
+     scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
+                                 max(operabale$sezon_yili), by = 1)) +
+     theme_igray() +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1))
+     
+
+#yıllara göre oynanan eser sayısı değişimi
+ob2 <- operabale |> ggplot(aes(x = sezon_yili, y = toplam_oynanan_eser_sayisi))
+
+ob2 + geom_line(color = "black") + 
+     geom_point(color = "orange") +
+     xlab("Sezon Yılı") + 
+     ylab("Oynanan Eser Sayısı") + 
+     scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
+                                 max(operabale$sezon_yili), by = 1)) +
+     theme_igray() +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+#yıllara göre koltuk sayısı değişimi
+ob3 <- operabale |> ggplot(aes(x = sezon_yili, y = koltuk_sayisi))
+
+ob3 + geom_line(color = "black") + 
+     geom_point(color = "cyan") +
+     xlab("Sezon Yılı") + 
+     ylab("Koltuk Sayısı") + 
+     scale_y_continuous(labels = comma) + 
+     scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
+                                 max(operabale$sezon_yili), by = 1)) +
+     theme_igray() +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+#birlikte göstermek
+
+uzun <- operabale |>
+  pivot_longer(
+    cols = c(toplam_seyirci_sayisi, toplam_oynanan_eser_sayisi, koltuk_sayisi),
+    names_to = "degisken",
+    values_to = "deger"
+  )
+
+uzun$degisken <- factor(
+  uzun$degisken,
+  levels = c("toplam_seyirci_sayisi", "toplam_oynanan_eser_sayisi", "koltuk_sayisi"),
+  labels = c("Seyirci Sayısı",
+             "Eser Sayısı",
+             "Koltuk Sayısı")
+  
+)
+
+ggplot(uzun, aes(x = sezon_yili, y = deger)) +
+  geom_line(color = "maroon") +
+  geom_point(size = 1) +
+  facet_grid(
+    degisken ~ .,
+    scales = "free_y"
+  ) +
+  scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
+                                 max(operabale$sezon_yili), by = 1))+
+  scale_y_continuous(labels = comma) +
+  theme_igray() +
+  theme(
+    strip.text.y = element_text(size = 11, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "Sezon Yılı", y = NULL)
+
+
+#koltuk sayısına göre salonların doluluk oranı tahmini, kültür-sanat etkinliklerine olan ilgi
+dolulukorani <- operabale$toplam_seyirci_sayisi / operabale$koltuk_sayisi
+
+dolulukorani
+
+ob4 <- operabale |> ggplot(aes(x = sezon_yili, y = dolulukorani))
+
+ob4 + geom_line(color = "black") + 
+     geom_point(color = "maroon") +
+     xlab("Sezon Yılı") + 
+     ylab("Doluluk Oranı") + 
+     scale_x_continuous(breaks = seq(min(operabale$sezon_yili),
+                                 max(operabale$sezon_yili), by = 1)) +
+     theme_igray() +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+#normalize edilmiş trend grafiği, eser sayısı ve seyirci sayısındaki büyümeyi birlikte görmek için (arz-talep)
+
+# Min-Max Normalizasyon Fonksiyonu
+min_max_norm <- function(x) {
+  (x - min(x, na.rm = TRUE)) / (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
+}
+
+# Veriyi normalize etme ve uzun formata getirme
+normalize_operabale <- operabale |>
+  mutate(
+    eser_norm = min_max_norm(toplam_oynanan_eser_sayisi),
+    seyirci_norm = min_max_norm(toplam_seyirci_sayisi)
+  ) |>
+  select(sezon_yili, eser_norm, seyirci_norm) |>
+  pivot_longer(cols = c(eser_norm, seyirci_norm), 
+               names_to = "Metrik", 
+               values_to = "Deger") |>
+  mutate(Metrik = recode(Metrik, 
+                         "eser_norm" = "Eser Sayısı (Normalize)", 
+                         "seyirci_norm" = "Seyirci Sayısı (Normalize)"))
+
+
+ggplot(normalize_operabale, aes(x = sezon_yili, y = Deger, color = Metrik, group = Metrik)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  scale_y_continuous(labels = scales::percent, limits = c(0, 1)) +
+  scale_x_continuous(breaks = seq(2000, 2024, by = 1)) +
+  labs(
+    title = "Eser ve Seyirci Sayısı Trend Karşılaştırması (2000 - 2024)",
+    subtitle = "Veriler kıyaslama yapılabilmesi için Min-Max yöntemi ile %0-%100 arasına normalize edilmiştir.",
+    x = "Sezon Yılı",
+    y = "Değişim Oranı",
+  
+  ) +
+  theme_igray() +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 14),
+    axis.text.x = element_text(angle = 45, vjust = 0.5)
+  )
+
+#normalize_operabale
+#uzun
+```
+
 ## Tercih Sebebi
 
 xxxxxx

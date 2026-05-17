@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   resources: TRCV_deneme.pdf
+  
 
 website:
   title: "Esin'in Analitik Labı"

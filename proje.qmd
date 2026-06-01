@@ -199,7 +199,7 @@ df <- read_xlsx("Hanetuketim2.xlsx")
 
 # 2. Veri Türlerini Numeric Yapma ve Temizleme
 df_clean <- df %>%
-  rename(Yil = `Anket yılı`) %>%
+  rename(Yil = "Anket yılı") %>%
   # Sadece geçerli yıl içeren satırları tut (dipnot metinlerini eler)
   filter(!is.na(Yil) & Yil >= 2002 & Yil <= 2024) %>%
   # Yıl sütununu tam sayı yap

@@ -28,21 +28,25 @@ xxxxxx
 #install.packages("tidyverse", repos = "https://cran.rstudio.com/")
 #install.packages("ggthemes", repos =  "https://cran.rstudio.com/")
 #install.packages("patchwork", repos =  "https://cran.rstudio.com/")
+#install.packages("RColorBrewer", repos =  "https://cran.rstudio.com/")
+
+
 library(tidyverse)
 library(ggplot2)
 library(readxl)
-#library(knitr)
+library(knitr)
 library(dplyr)
 library(scales)
 library(ggthemes)
 library(tidyr)
 #library(patchwork)
+library(RColorBrewer)
 
 operabale <- read_xlsx("operabale.xlsx")
 str(operabale)
 
 #view(operabale)
-#kable(operabale)
+kable(operabale)
 #glimpse(operabale)
 #summary(operabale)
 
@@ -121,9 +125,11 @@ ob4 + geom_line(color = "maroon") +
 
 
 #koltuk sayısına göre salonların doluluk oranı tahmini, kültür-sanat etkinliklerine olan ilgi
-dolulukorani <- operabale$toplam_seyirci_sayisi / operabale$koltuk_sayisi
+dolulukorani <- (operabale$toplam_seyirci_sayisi / (operabale$koltuk_sayisi * operabale$toplam_oynanan_eser_sayisi)) * 100
 
 dolulukorani
+#%100ü geçmiş olanlar var, 100 mü yapılmalı?? bu formül yanlış, düzenle!!
+
 
 ob5 <- operabale |> ggplot(aes(x = sezon_yili, y = dolulukorani))
 
@@ -132,6 +138,7 @@ ob5 + geom_line(color = "maroon") +
      xlab("Sezon Yılı") + 
      ylab("Doluluk Oranı") + 
      scale_x_continuous(breaks = seq(2000, 2024, by = 1)) +
+     scale_y_continuous(breaks = seq(0, 150, by = 20)) +
      theme_igray() +
      theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
@@ -177,6 +184,71 @@ ob6 <- normalize_operabale |> ggplot(aes(x = sezon_yili, y = Deger, color = Metr
 
 #normalize_operabale
 #uzun
+ 
+Sys.setlocale("LC_ALL", "Turkish") 
+options(encoding = "UTF-8") 
+ 
+library(tidyverse)
+library(RColorBrewer)
+
+# 1. Veriyi Oku
+# Not: Dosya yolunu kendi bilgisayarına göre güncelleyebilirsin.
+df <- read_xlsx("Hanetuketim2.xlsx")
+
+
+
+# 2. Veri Türlerini Numeric Yapma ve Temizleme
+df_clean <- df %>%
+  rename(Yil = `Anket yılı`) %>%
+  # Sadece geçerli yıl içeren satırları tut (dipnot metinlerini eler)
+  filter(!is.na(Yil) & Yil >= 2002 & Yil <= 2024) %>%
+  # Yıl sütununu tam sayı yap
+  mutate(Yil = as.integer(Yil)) %>%
+  # Yil sütunu HARİÇ tüm sütunları numeric (sayısal) türe dönüştür
+  # mutate(across(...)) yapısı tüm sütunları tek tek yazma zahmetinden kurtarır.
+  mutate(across(-Yil, ~ as.numeric(str_replace_all(as.character(.), ",", "."))))
+
+# 3. 2000-2024 Yılları İçin Zaman Serisi İskeleti Oluşturma
+all_years <- data.frame(Yil = 2000:2024)
+
+# 4. Eksik Yılları Sonraki Yılın Verisiyle Doldurma (2000 ve 2001 -> 2002 olur)
+df_filled <- all_years %>%
+  left_join(df_clean, by = "Yil") %>%
+  arrange(Yil) %>%
+  fill(-Yil, .direction = "up")
+
+# 5. Veriyi Isı Haritası (geom_tile) İçin Uzun (Long) Formata Getirme
+df_long <- df_filled %>%
+  pivot_longer(
+    cols = -Yil,
+    names_to = "Harcama_Turu",
+    values_to = "Yuzde"
+  ) %>%
+  mutate(Harcama_Turu = str_trim(Harcama_Turu))
+
+# 6. Sıcaklık Grafiğini (Isı Haritası) Çizme
+ggplot(df_long, aes(x = factor(Yil), y = Harcama_Turu, fill = Yuzde)) +
+  coord_fixed(ratio = 1.5) +
+  geom_tile(color = "white", linewidth = 0.3) + 
+  scale_fill_distiller(
+    palette = "Reds", 
+    direction = 1, 
+    name = "Pay (%)"
+  ) +
+  labs(
+    title = "Hanehalkı Tüketim Harcamalarının Türlere Göre Dağılımı",
+    subtitle = "Tüm veriler sayısal türe dönüştürülmüş ve eksik yıllar tamamlanmıştır.",
+    x = "Yıllar",
+    y = "Harcama Türleri"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1, face = "bold", size = 8),
+    axis.text.y = element_text(face = "bold", size = 8),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(size = 10, face = "italic", hjust = 0.5),
+    panel.grid = element_blank()
+  )
 ```
 
 ## Tercih Sebebi

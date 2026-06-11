@@ -991,7 +991,7 @@ ggplot(birlesik_pazar, aes(x = Yil, y = Deger, color = Sektor, fill = Sektor, li
 
 ## Nüfustaki Artışa Göre Eğlence-Kültür Alanına Yapılan Harcama Indeksi
 
-```{r eglencekultur-nüfus arasındaki iliski, message=FALSE, warning=FALSE, echo=FALSE}
+```{r eglencekultur-nufus-arasindaki-iliski, message=FALSE, warning=FALSE, echo=FALSE}
 
 eglence_nufus_data <- data.frame(
   Yil = 2000:2024,
@@ -1079,7 +1079,7 @@ Regresyon trendi, nüfus büyümesiyle birlikte hanehalkının eğlence ve kült
 
 ## Eğlence-Kültür Harcama İndeksinin Sanat Dalları ile Kıyaslaması (Regresyon Modeli Analizi)
 
-```{r eglencekultur-nüfus-kultur-dataframe, fig.width=12, fig.height=12, message=FALSE, warning=FALSE, echo=FALSE}
+```{r eglencekultur-nufus-kultur-dataframe, fig.width=12, fig.height=12, message=FALSE, warning=FALSE, echo=FALSE}
 
 # --- A) TÜM SEKTÖRLERİ TEK BİR HAVUZDA TOPLAMA ---
 # Not: sinema_tamamlanmis ve hanehalkı_tamamlanmis tablolarınızın aktif olduğunu varsayıyoruz.
@@ -1121,7 +1121,7 @@ kultur_nufus_data <- kultur_nufus_havuz %>%
   ungroup()
 ```
 
-```{r eglencekultur-nüfus-kultur-grafigi, fig.width=12, fig.height=12, message=FALSE, warning=FALSE, echo=FALSE}
+```{r eglencekultur-nufus-kultur-grafigi, fig.width=12, fig.height=12, message=FALSE, warning=FALSE, echo=FALSE}
 # --- A) VERİNİN FACTOR OLARAK SIRALANMASI ---
 # KRİTİK ADIM: Akışı tam istediğiniz gibi "Opera & Bale", "Sinema", "Tiyatro" şeklinde kilitliyoruz.
 kultur_nufus_data <- kultur_nufus_data %>%

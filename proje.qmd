@@ -14,7 +14,7 @@ format:
         </style>
 ---
 
-![](data/proje_foto.jpeg){fig-align="center" width="1000" height="600"}
+![](proje_foto.jpeg){fig-align="center" width="1000" height="600"}
 
 ```{r ilgili kütüphanelerin çağrılması, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -67,7 +67,7 @@ Türkiye’nin son çeyrek asırdaki sosyo-ekonomik dönüşümünü, kültürel
 
 # Veri Kaynağı
 
-```{r, echo=FALSE}}
+```{r, echo=FALSE}
 
 Sys.setlocale("LC_ALL", "Turkish") 
 options(encoding = "UTF-8") 
